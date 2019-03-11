@@ -8,9 +8,9 @@ class MyAppBar extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Container(
-      height: 56.0,
+      height: 100.0,
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: BoxDecoration(color: Colors.yellow[500]),
+      decoration: BoxDecoration(color: Colors.green[500]),
 
       child: Row(
         children: <Widget>[
