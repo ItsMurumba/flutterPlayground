@@ -1,61 +1,38 @@
 import 'package:flutter/material.dart';
 
-class MyAppBar extends StatelessWidget{
-  MyAppBar({this.title});
 
-  final Widget title;
-
+class TutorialHome extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return Container(
-      height: 100.0,
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: BoxDecoration(color: Colors.green[500]),
-
-      child: Row(
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.menu),
-            tooltip: 'Navigation menu',
-            onPressed: null,
-          ),
-          Expanded(
-            child: title,
-          ),
-          IconButton(
-            icon: Icon(Icons.search),
-            tooltip: 'Search',
-            onPressed: null,
-          )
-        ],
+    return Scaffold(
+     appBar: AppBar(
+       leading: IconButton(
+           icon: Icon(Icons.menu),
+           tooltip: 'Navigation Menu',
+           onPressed: null
+       ),
+       title: Text('Example Title'),
+       actions: <Widget>[
+         IconButton(
+           icon: Icon(Icons.search),
+           tooltip: 'Search',
+           onPressed: null,
+         )
+       ],
+     ),
+      body: Center(
+        child: Text('Hello, World'),
       ),
-    );
-  }
-}
-class MyScaffold extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return Material(
-      child: Column(
-        children: <Widget>[
-          MyAppBar(
-            title: Text('Example Title',
-            style: Theme.of(context).primaryTextTheme.title,
-            ),
-          ),
-          Expanded(
-            child: Center(
-              child: Text('Hello, world'),
-            ),
-          )
-        ],
-      ),
+      floatingActionButton: FloatingActionButton(
+          tooltip: 'Add',
+          child: Icon(Icons.add),
+          onPressed: null),
     );
   }
 }
 void main(){
   runApp(MaterialApp(
-    title: 'My App',
-    home: MyScaffold(),
+    title: 'Flutter Tutorial',
+    home: TutorialHome(),
   ));
 }
